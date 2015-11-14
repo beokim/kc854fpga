@@ -36,12 +36,10 @@
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="blink_test.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_DRC" xil_pn:name="blink_test.drc" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="blink_test.lso"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="blink_test.ncd" xil_pn:subbranch="Par"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="blink_test.ngc"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="blink_test.ngd"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="blink_test.ngr"/>
     <file xil_pn:fileType="FILE_PAD_MISC" xil_pn:name="blink_test.pad"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAR_REPORT" xil_pn:name="blink_test.par" xil_pn:subbranch="Par"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PCF" xil_pn:name="blink_test.pcf" xil_pn:subbranch="Map"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="blink_test.prj"/>
     <file xil_pn:fileType="FILE_TRCE_MISC" xil_pn:name="blink_test.ptwx"/>
@@ -49,7 +47,6 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="blink_test.syr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_TXT_REPORT" xil_pn:name="blink_test.twr" xil_pn:subbranch="Par"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_XML_REPORT" xil_pn:name="blink_test.twx" xil_pn:subbranch="Par"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_UNROUTES" xil_pn:name="blink_test.unroutes" xil_pn:subbranch="Par"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="blink_test.ut" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:fileType="FILE_XPI" xil_pn:name="blink_test.xpi"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="blink_test.xst"/>
@@ -61,8 +58,6 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGM" xil_pn:name="blink_test_map.ngm" xil_pn:subbranch="Map"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="blink_test_map.xrpt"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="blink_test_ngdbuild.xrpt"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="blink_test_pad.csv" xil_pn:subbranch="Par"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_TXT_REPORT" xil_pn:name="blink_test_pad.txt" xil_pn:subbranch="Par"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="blink_test_par.xrpt"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="blink_test_summary.html"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="blink_test_summary.xml"/>
@@ -183,7 +178,7 @@
     </transform>
     <transform xil_pn:end_ts="1446377589" xil_pn:in_ck="4272001478240289841" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="8769361996500374654" xil_pn:start_ts="1446377589">
       <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="NotReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
@@ -219,13 +214,12 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1447528093" xil_pn:in_ck="5486476451142719632" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="-9208469520748523658" xil_pn:start_ts="1447528032">
+    <transform xil_pn:end_ts="1447536380" xil_pn:in_ck="5486476451142719632" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="-9208469520748523658" xil_pn:start_ts="1447536324">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name=".lso"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="kc854.lso"/>
       <outfile xil_pn:name="kc854.ngc"/>
@@ -234,9 +228,6 @@
       <outfile xil_pn:name="kc854.stx"/>
       <outfile xil_pn:name="kc854.syr"/>
       <outfile xil_pn:name="kc854.xst"/>
-      <outfile xil_pn:name="kc854_stx_beh.prj"/>
-      <outfile xil_pn:name="kc854_tb_beh.prj"/>
-      <outfile xil_pn:name="kc854_tb_stx_beh.prj"/>
       <outfile xil_pn:name="kc854_vhdl.prj"/>
       <outfile xil_pn:name="kc854_xst.xrpt"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
@@ -246,7 +237,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1447528105" xil_pn:in_ck="936177426203981648" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="967311712591500756" xil_pn:start_ts="1447528098">
+    <transform xil_pn:end_ts="1447536436" xil_pn:in_ck="936177426203981648" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="967311712591500756" xil_pn:start_ts="1447536429">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -256,7 +247,7 @@
       <outfile xil_pn:name="kc854.ngd"/>
       <outfile xil_pn:name="kc854_ngdbuild.xrpt"/>
     </transform>
-    <transform xil_pn:end_ts="1447528111" xil_pn:in_ck="936223837688383601" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="6918683465102363066" xil_pn:start_ts="1447528105">
+    <transform xil_pn:end_ts="1447536443" xil_pn:in_ck="936223837688383601" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="6918683465102363066" xil_pn:start_ts="1447536436">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
@@ -271,7 +262,7 @@
       <outfile xil_pn:name="kc854_summary.xml"/>
       <outfile xil_pn:name="kc854_usage.xml"/>
     </transform>
-    <transform xil_pn:end_ts="1447528151" xil_pn:in_ck="-54018195533564502" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="8251173951899154272" xil_pn:start_ts="1447528111">
+    <transform xil_pn:end_ts="1447536480" xil_pn:in_ck="-54018195533564502" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="8251173951899154272" xil_pn:start_ts="1447536443">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -286,7 +277,7 @@
       <outfile xil_pn:name="kc854_pad.txt"/>
       <outfile xil_pn:name="kc854_par.xrpt"/>
     </transform>
-    <transform xil_pn:end_ts="1447528170" xil_pn:in_ck="154779407832754" xil_pn:name="TRANEXT_bitFile_spartan3" xil_pn:prop_ck="-2672950586390118423" xil_pn:start_ts="1447528151">
+    <transform xil_pn:end_ts="1447536498" xil_pn:in_ck="154779407832754" xil_pn:name="TRANEXT_bitFile_spartan3" xil_pn:prop_ck="-2672950586390118423" xil_pn:start_ts="1447536480">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
@@ -302,9 +293,11 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="InputRemoved"/>
     </transform>
-    <transform xil_pn:end_ts="1447528151" xil_pn:in_ck="930097521747325805" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416186" xil_pn:start_ts="1447528146">
+    <transform xil_pn:end_ts="1447536480" xil_pn:in_ck="930097521747325805" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416186" xil_pn:start_ts="1447536474">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
