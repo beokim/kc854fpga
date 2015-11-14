@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="E:/source/altera/kc854fpga/boards/s3starter/kc854/kc854_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="kc854_tb" />
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_arith" />
+            <top_module name="std_logic_textio" />
+            <top_module name="std_logic_unsigned" />
+            <top_module name="t80_pack" />
+            <top_module name="textio" />
+            <top_module name="vcomponents" />
+            <top_module name="vital_primitives" />
+            <top_module name="vital_timing" />
+            <top_module name="vpkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="4" />
+   <wvobject fp_name="group103" type="group">
+      <obj_property name="label">TB</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/kc854_tb/clock_50" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clock_50</obj_property>
+         <obj_property name="ObjectShortName">clock_50</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/key" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">key[3:0]</obj_property>
+         <obj_property name="ObjectShortName">key[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/sw" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">sw[7:0]</obj_property>
+         <obj_property name="ObjectShortName">sw[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/sd_dat" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sd_dat</obj_property>
+         <obj_property name="ObjectShortName">sd_dat</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/sram_dq" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">sram_dq[15:0]</obj_property>
+         <obj_property name="ObjectShortName">sram_dq[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/ps2_clk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ps2_clk</obj_property>
+         <obj_property name="ObjectShortName">ps2_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/ps2_dat" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ps2_dat</obj_property>
+         <obj_property name="ObjectShortName">ps2_dat</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/vga_r" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">vga_r</obj_property>
+         <obj_property name="ObjectShortName">vga_r</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/vga_g" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">vga_g</obj_property>
+         <obj_property name="ObjectShortName">vga_g</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/vga_b" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">vga_b</obj_property>
+         <obj_property name="ObjectShortName">vga_b</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/vga_hs" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">vga_hs</obj_property>
+         <obj_property name="ObjectShortName">vga_hs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/vga_vs" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">vga_vs</obj_property>
+         <obj_property name="ObjectShortName">vga_vs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/sram_addr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">sram_addr[17:0]</obj_property>
+         <obj_property name="ObjectShortName">sram_addr[17:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/sram_oe_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sram_oe_n</obj_property>
+         <obj_property name="ObjectShortName">sram_oe_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/sram_ce_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sram_ce_n</obj_property>
+         <obj_property name="ObjectShortName">sram_ce_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/sram_we_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sram_we_n</obj_property>
+         <obj_property name="ObjectShortName">sram_we_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/sram_lb_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sram_lb_n</obj_property>
+         <obj_property name="ObjectShortName">sram_lb_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/sram_ub_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sram_ub_n</obj_property>
+         <obj_property name="ObjectShortName">sram_ub_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/uart_txd" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">uart_txd</obj_property>
+         <obj_property name="ObjectShortName">uart_txd</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/ledr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ledr[7:0]</obj_property>
+         <obj_property name="ObjectShortName">ledr[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/hex" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">hex[6:0]</obj_property>
+         <obj_property name="ObjectShortName">hex[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/hex_an" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">hex_an[3:0]</obj_property>
+         <obj_property name="ObjectShortName">hex_an[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/sd_dat3" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sd_dat3</obj_property>
+         <obj_property name="ObjectShortName">sd_dat3</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/sd_cmd" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sd_cmd</obj_property>
+         <obj_property name="ObjectShortName">sd_cmd</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/sd_clk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sd_clk</obj_property>
+         <obj_property name="ObjectShortName">sd_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/gpio_1" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">gpio_1[9:0]</obj_property>
+         <obj_property name="ObjectShortName">gpio_1[9:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/sram_lb_ce_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sram_lb_ce_n</obj_property>
+         <obj_property name="ObjectShortName">sram_lb_ce_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/sram_ub_ce_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sram_ub_ce_n</obj_property>
+         <obj_property name="ObjectShortName">sram_ub_ce_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/sram_addr_bits" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">sram_addr_bits</obj_property>
+         <obj_property name="ObjectShortName">sram_addr_bits</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/uart_rxd" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">uart_rxd</obj_property>
+         <obj_property name="ObjectShortName">uart_rxd</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group104" type="group">
+      <obj_property name="label">Memcontroller</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/clk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/reset_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">reset_n</obj_property>
+         <obj_property name="ObjectShortName">reset_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/sramaddr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">sramaddr[17:0]</obj_property>
+         <obj_property name="ObjectShortName">sramaddr[17:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/sramdataout" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">sramdataout[15:0]</obj_property>
+         <obj_property name="ObjectShortName">sramdataout[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/sramdatain" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">sramdatain[15:0]</obj_property>
+         <obj_property name="ObjectShortName">sramdatain[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/sramoe_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sramoe_n</obj_property>
+         <obj_property name="ObjectShortName">sramoe_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/sramce_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sramce_n</obj_property>
+         <obj_property name="ObjectShortName">sramce_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/sramwe_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sramwe_n</obj_property>
+         <obj_property name="ObjectShortName">sramwe_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/sramlb_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sramlb_n</obj_property>
+         <obj_property name="ObjectShortName">sramlb_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/sramub_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sramub_n</obj_property>
+         <obj_property name="ObjectShortName">sramub_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/cpuaddr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">cpuaddr[15:0]</obj_property>
+         <obj_property name="ObjectShortName">cpuaddr[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/cpudout" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">cpudout[7:0]</obj_property>
+         <obj_property name="ObjectShortName">cpudout[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/cpudin" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">cpudin[7:0]</obj_property>
+         <obj_property name="ObjectShortName">cpudin[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/cpuwr_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cpuwr_n</obj_property>
+         <obj_property name="ObjectShortName">cpuwr_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/cpurd_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cpurd_n</obj_property>
+         <obj_property name="ObjectShortName">cpurd_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/cpum1_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cpum1_n</obj_property>
+         <obj_property name="ObjectShortName">cpum1_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/cpumreq_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cpumreq_n</obj_property>
+         <obj_property name="ObjectShortName">cpumreq_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/cpuiorq_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cpuiorq_n</obj_property>
+         <obj_property name="ObjectShortName">cpuiorq_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/cpuen" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cpuen</obj_property>
+         <obj_property name="ObjectShortName">cpuen</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/cpuwait" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cpuwait</obj_property>
+         <obj_property name="ObjectShortName">cpuwait</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/cputick" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cputick</obj_property>
+         <obj_property name="ObjectShortName">cputick</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/pioporta" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">pioporta[7:0]</obj_property>
+         <obj_property name="ObjectShortName">pioporta[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/pioportb" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">pioportb[7:0]</obj_property>
+         <obj_property name="ObjectShortName">pioportb[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/vidaddr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">vidaddr[13:0]</obj_property>
+         <obj_property name="ObjectShortName">vidaddr[13:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/viddata" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">viddata[15:0]</obj_property>
+         <obj_property name="ObjectShortName">viddata[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/vidread" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">vidread</obj_property>
+         <obj_property name="ObjectShortName">vidread</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/vidbusy" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">vidbusy</obj_property>
+         <obj_property name="ObjectShortName">vidbusy</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/vidhires" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">vidhires</obj_property>
+         <obj_property name="ObjectShortName">vidhires</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/bootmode" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">bootmode</obj_property>
+         <obj_property name="ObjectShortName">bootmode</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/switches" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">switches[9:0]</obj_property>
+         <obj_property name="ObjectShortName">switches[9:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/state" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">state</obj_property>
+         <obj_property name="ObjectShortName">state</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/cpuaddrint" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">cpuaddrint[17:0]</obj_property>
+         <obj_property name="ObjectShortName">cpuaddrint[17:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/vidaddrint" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">vidaddrint[17:0]</obj_property>
+         <obj_property name="ObjectShortName">vidaddrint[17:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/port84" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">port84[7:0]</obj_property>
+         <obj_property name="ObjectShortName">port84[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/port86" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">port86[7:0]</obj_property>
+         <obj_property name="ObjectShortName">port86[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/bankwe" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">bankwe</obj_property>
+         <obj_property name="ObjectShortName">bankwe</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/banken" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">banken</obj_property>
+         <obj_property name="ObjectShortName">banken</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/banklbyte" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">banklbyte</obj_property>
+         <obj_property name="ObjectShortName">banklbyte</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/bankaddr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">bankaddr[3:0]</obj_property>
+         <obj_property name="ObjectShortName">bankaddr[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/romdata" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">romdata[7:0]</obj_property>
+         <obj_property name="ObjectShortName">romdata[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/selectvid" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">selectvid</obj_property>
+         <obj_property name="ObjectShortName">selectvid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/memcontrol/cpucycle" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">cpucycle</obj_property>
+         <obj_property name="ObjectShortName">cpucycle</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group105" type="group">
+      <obj_property name="label">CPU</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/kc854_tb/kc/cpu/reset_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">reset_n</obj_property>
+         <obj_property name="ObjectShortName">reset_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/cpu/clk_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clk_n</obj_property>
+         <obj_property name="ObjectShortName">clk_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/cpu/clken" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clken</obj_property>
+         <obj_property name="ObjectShortName">clken</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/cpu/wait_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">wait_n</obj_property>
+         <obj_property name="ObjectShortName">wait_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/cpu/int_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">int_n</obj_property>
+         <obj_property name="ObjectShortName">int_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/cpu/nmi_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">nmi_n</obj_property>
+         <obj_property name="ObjectShortName">nmi_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/cpu/busrq_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">busrq_n</obj_property>
+         <obj_property name="ObjectShortName">busrq_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/cpu/m1_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">m1_n</obj_property>
+         <obj_property name="ObjectShortName">m1_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/cpu/mreq_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">mreq_n</obj_property>
+         <obj_property name="ObjectShortName">mreq_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/cpu/iorq_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">iorq_n</obj_property>
+         <obj_property name="ObjectShortName">iorq_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/cpu/rd_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rd_n</obj_property>
+         <obj_property name="ObjectShortName">rd_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/cpu/wr_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">wr_n</obj_property>
+         <obj_property name="ObjectShortName">wr_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/cpu/rfsh_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rfsh_n</obj_property>
+         <obj_property name="ObjectShortName">rfsh_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/cpu/halt_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">halt_n</obj_property>
+         <obj_property name="ObjectShortName">halt_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/cpu/busak_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">busak_n</obj_property>
+         <obj_property name="ObjectShortName">busak_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/cpu/a" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">a[15:0]</obj_property>
+         <obj_property name="ObjectShortName">a[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/cpu/di" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">di[7:0]</obj_property>
+         <obj_property name="ObjectShortName">di[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/cpu/di_reg" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">di_reg[7:0]</obj_property>
+         <obj_property name="ObjectShortName">di_reg[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/cpu/do" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">do[7:0]</obj_property>
+         <obj_property name="ObjectShortName">do[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/cpu/inte" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">inte</obj_property>
+         <obj_property name="ObjectShortName">inte</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/cpu/reti_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">reti_n</obj_property>
+         <obj_property name="ObjectShortName">reti_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/cpu/intcycle_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">intcycle_n</obj_property>
+         <obj_property name="ObjectShortName">intcycle_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/cpu/noread" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">noread</obj_property>
+         <obj_property name="ObjectShortName">noread</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/cpu/write" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">write</obj_property>
+         <obj_property name="ObjectShortName">write</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/cpu/iorq" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">iorq</obj_property>
+         <obj_property name="ObjectShortName">iorq</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/cpu/di_reg" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">di_reg[7:0]</obj_property>
+         <obj_property name="ObjectShortName">di_reg[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/cpu/mcycle" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">mcycle[2:0]</obj_property>
+         <obj_property name="ObjectShortName">mcycle[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/cpu/tstate" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">tstate[2:0]</obj_property>
+         <obj_property name="ObjectShortName">tstate[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/cpu/mode" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">mode</obj_property>
+         <obj_property name="ObjectShortName">mode</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/cpu/t2write" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">t2write</obj_property>
+         <obj_property name="ObjectShortName">t2write</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/cpu/iowait" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">iowait</obj_property>
+         <obj_property name="ObjectShortName">iowait</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group137" type="group">
+      <obj_property name="label">sysclock</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/kc854_tb/kc/sysclock/clk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/sysclock/cpuclken" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cpuclken</obj_property>
+         <obj_property name="ObjectShortName">cpuclken</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/sysclock/ctch4clk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctch4clk</obj_property>
+         <obj_property name="ObjectShortName">ctch4clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/sysclock/ctcbiclk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctcbiclk</obj_property>
+         <obj_property name="ObjectShortName">ctcbiclk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/sysclock/maincounter" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">maincounter</obj_property>
+         <obj_property name="ObjectShortName">maincounter</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/sysclock/mainclken" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">mainclken</obj_property>
+         <obj_property name="ObjectShortName">mainclken</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/sysclock/h4clkcounter" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">h4clkcounter</obj_property>
+         <obj_property name="ObjectShortName">h4clkcounter</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/sysclock/h4clkcounterslv" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">h4clkcounterslv[6:0]</obj_property>
+         <obj_property name="ObjectShortName">h4clkcounterslv[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/sysclock/biclkcounter" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">biclkcounter</obj_property>
+         <obj_property name="ObjectShortName">biclkcounter</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/sysclock/sys_clk" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">sys_clk</obj_property>
+         <obj_property name="ObjectShortName">sys_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/sysclock/cpu_clk" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">cpu_clk</obj_property>
+         <obj_property name="ObjectShortName">cpu_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/sysclock/h4_clk_max" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">h4_clk_max</obj_property>
+         <obj_property name="ObjectShortName">h4_clk_max</obj_property>
+      </wvobject>
+      <wvobject fp_name="/kc854_tb/kc/sysclock/bi_clk_max" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">bi_clk_max</obj_property>
+         <obj_property name="ObjectShortName">bi_clk_max</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>
