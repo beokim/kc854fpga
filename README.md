@@ -56,4 +56,5 @@ This design was tested on Terasic DE1 (Cyclone II) and Spartan 3 Starter (Sparta
 - mehr Programme testen
 - Repeat-Rate beim Keyboard zu hoch (?)
 - besseres Upload-Programm
+- Timing-Constraints für Spartan3 überarbeiten
 
