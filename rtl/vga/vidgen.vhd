@@ -84,7 +84,8 @@ architecture rtl of vidgen is
     signal syncDelayH   : std_logic_vector(SYNC_DELAY downto 0);
     signal syncDelayV   : std_logic_vector(SYNC_DELAY downto 0);
     
-    signal pixelData    : std_logic_vector(7 downto 0);
+    signal pixelShift   : std_logic_vector(7 downto 0);
+    signal colorShift   : std_logic_vector(7 downto 0);
     signal colorData    : std_logic_vector(7 downto 0);
     
     signal pixelX       : integer range 0 to 2 := 0;
@@ -187,18 +188,21 @@ begin
                 
             if pixelX = 0 then
                 if pixelXshift>0 then -- Pixel shiften
-                    pixelData <= pixelData(6 downto 0) & "0";
+                    pixelShift <= pixelShift(6 downto 0) & "0";
+                    colorShift <= colorShift(6 downto 0) & "0";
                     pixelXshift <= pixelXshift - 1;
                 else
                     if (lineAddr < 40) then -- neues Byte lesen
                         lineAddr <= lineAddr + 1;
-                        pixelData <= vgaData(7 downto 0);
+                        pixelShift <= vgaData(7 downto 0);
+                        colorShift <= vgaData(15 downto 8);
                         colorData <= vgaData(15 downto 8);
                         
                         pixelXshift <= 7;
                     else -- Ende erreicht
                         displayPixel <= false;
-                        pixelData <= "00000000";
+                        pixelShift <= "00000000";
+                        colorShift <= "00000000";
                         colorData <= "00000000";
                     end if;
                 end if;
@@ -214,9 +218,12 @@ begin
 
         dispColor := "000000";    -- schwarz
         if ((countV < V_DISP) and (countH < H_DISP) and not (vidScanline='0' and pixelY=0)) then
---            if (pixelData(7)='1') and not (blinkDiv='1' and colorData(7)='1') then -- vordergrund
-            if (pixelData(7)='1') and not (vidBlink='1' and colorData(7)='1') then -- vordergrund
-                case colorData(6 downto 3) is
+            if (vidHires='1') then     -- Bitmodus/Hires: color+pixel= "00" schwarz
+                dispColor(5 downto 4) := (others => pixelShift(7)); -- "01" rot
+                dispColor(3 downto 2) := (others => colorShift(7)); -- "10" tuerkis
+                dispColor(1 downto 0) := (others => colorShift(7)); -- "11" weiss
+            elsif (pixelShift(7)='1') and not (vidBlink='1' and colorData(7)='1') then -- vordergrund
+                case colorData(6 downto 3) is   -- Bytemodus
                     when "0001" => dispColor := "000011"; -- blau
                     when "0010" => dispColor := "110000"; -- rot
                     when "0011" => dispColor := "110011"; -- purpur
