@@ -22,7 +22,10 @@
     ld  de,0e000H
     call dzx7_standard
 
-    ld  a,9fh ; RAM0 + CHAOS E + IRM + ROM Basic an (=> CHAOS C aus)
+    xor a,a ; 0xxxxxxx CHAOS C aus
+    out (86h),a
+    
+    ld  a,9fh ; RAM0 + CHAOS E + IRM + ROM Basic an 
     out (88h),a
     
     ld  hl,basic_data

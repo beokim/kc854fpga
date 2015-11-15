@@ -160,20 +160,10 @@ architecture struct of kc854 is
     
     signal vidTest      : std_logic_vector(3 downto 0);
     
-begin
---    GPIO_1(1) <= vidTest(0);
---    GPIO_1(3) <= vidTest(1);
- --   GPIO_1(5) <= vidTest(2);
- --   GPIO_1(7) <= vidTest(3);
-
---    GPIO_1(1) <= ctcZcTo(0);
---    GPIO_1(3) <= ctcZcTo(1);
---    GPIO_1(5) <= ctcZcTo(2);
---    GPIO_1(7) <= ctcZcTo(3);
+    signal memSwitches  : std_logic_vector(9 downto 0);
     
---    GPIO_1(1) <= debugPort(0);
+begin
     GPIO_1(1) <= pioBStb;
---    GPIO_1(3) <= vidH5Clk; 
     GPIO_1(3) <= uartTXD1;
     GPIO_1(5) <= uartTXD2;
     GPIO_1(7) <= uartTXD3;
@@ -257,14 +247,14 @@ begin
     begin
         wait until rising_edge(cpuclk);
         
-        if resetDelay>0 then
+        if resetDelay>0 then -- Reset verzoegern?
             resetDelay <= resetDelay - 1;
-        elsif (debugCpuAddr(15 downto 14)="11") then
-            bootmode <= '0';
+        elsif (debugCpuAddr(15 downto 14)="11") then -- Sprung ins Rom 
+            bootmode <= '0'; -- Bootmodus aus
         end if;
         
-        if (KEY(0)='0' or clkLocked='0') then
-            bootmode <= '1';
+        if (KEY(0)='0' or clkLocked='0') then -- Reset
+            bootmode <= '1'; -- WE fuer Roms
             resetDelay <= RESET_DELAY;
         end if;
     end process;
@@ -351,9 +341,9 @@ begin
         vidHires     => vidHires,
         vidBlinkEn   => vidBlinkEn,
         
-        bootmode     => bootmode
+        bootmode     => bootmode,
         
---        switches     => LEDR
+        switches     => memSwitches
     );
     
     -- CPU data-in multiplexer

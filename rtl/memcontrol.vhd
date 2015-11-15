@@ -225,8 +225,8 @@ begin
                         bankEn <= true;
                     end if;
                     
-                    if romBasic then -- basic im oberen byte
-                        bankLByte <= '0';
+                    if romBasic and not romCaosC then -- Basic / Caos C -> Caos C hat Vorrang
+                        bankLByte <= '0'; -- Basic im oberen byte
                     end if;
                 else -- caos e
                     bankEn <= romCaosE;
