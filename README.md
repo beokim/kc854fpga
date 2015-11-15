@@ -41,12 +41,12 @@ This design was tested on Terasic DE1 (Cyclone II) and Spartan 3 Starter (Sparta
 ### Module
 - M003 mit rudimentärer SIO für Datenübertragung eingebaut (reicht für Keyboard und Datenübertragung)
 - Kanal 2 ist an die serielle Schnittstelle angeschlossen
-- Achtung: Steuerleitungen für Hardwareflusskontrolle fehlen! Baudrate nicht zu stark erhöhen
+- Achtung: Steuerleitungen für Flusskontrolle fehlen! Baudrate nicht zu stark erhöhen
 - Flip-/Flop für Takthalbierung im M003 abschaltbar (SW2) dann standardmäßig 2400 Baud
 
 ## Bedienung
-- Serielle Schnittstelle korrekt initialsiern (1200/2400 Baud 8n1)
-- Upload von KCC-Files z.B. mit Shellscript (Cygwin)
+- serielle Schnittstelle korrekt initialisieren (1200/2400 Baud 8n1)
+- anschließend Upload von KCC-Files z.B. mit Shellscript (Cygwin)
 - Bespielscript im Ordner /tape
 
 ## ToDo's
