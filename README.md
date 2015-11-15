@@ -45,9 +45,9 @@ This design was tested on Terasic DE1 (Cyclone II) and Spartan 3 Starter (Sparta
 - Flip-/Flop für Takthalbierung im M003 abschaltbar (SW2) dann standardmäßig 2400 Baud
 
 ## Bedienung
-- Serielle Schnittstelle korrekt initialsiern (8n1 1200/2400 Baud)
+- Serielle Schnittstelle korrekt initialsiern (1200/2400 Baud 8n1)
 - Upload von KCC-Files z.B. mit Shellscript (Cygwin)
-- Bespielscript im Ordner <tape>
+- Bespielscript im Ordner /tape
 
 ## ToDo's
 - SDCard-Reader (?)
