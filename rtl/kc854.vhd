@@ -172,7 +172,7 @@ begin
 --    GPIO_1(7) <= ctcZcTo(3);
     
 --    GPIO_1(1) <= debugPort(0);
-    GPIO_1(1) <= ctcZcTo(2);
+    GPIO_1(1) <= pioBStb;
 --    GPIO_1(3) <= vidH5Clk; 
     GPIO_1(3) <= uartTXD1;
     GPIO_1(5) <= uartTXD2;

@@ -144,6 +144,7 @@ begin
     
     vidBlinkDelay(0) <= vidBlink;
 
+    -- Flankenerkennung und Flip-/Flop fuer Halbierung des Blinktaktes
     blink : process
     begin
         wait until rising_edge(cpuclk);
@@ -158,6 +159,7 @@ begin
         end if;
     end process;
     
+    -- Zeilenzaehler fuer KC-Seite
     kcLineCounter : process
     begin
         wait until rising_edge(cpuclk);
@@ -171,9 +173,10 @@ begin
         end if;
     end process;
     
-    vidLine(8) <= '0';
+    vidLine(8) <= '0'; -- Zeilen auf VGA-Seite gehen nur von 0..255
     kcVidLineSLV <= std_logic_vector(to_unsigned(kcVidLine,kcVidLineSLV'length));
     
+    -- Puffer fuer Blinksignal pro Videozeile
     blinkbuffer : entity work.dualsram
     generic map (
         ADDRWIDTH => 9,

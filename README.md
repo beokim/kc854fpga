@@ -54,7 +54,8 @@ This design was tested on Terasic DE1 (Cyclone II) and Spartan 3 Starter (Sparta
 - D004 (?)
 - Hires-Grafikmodus
 - mehr Programme testen
-- Repeat-Rate beim Keyboard zu hoch (?)
-- besseres Upload-Programm
+- verschluckte Tastendrücke in Digger untersuchen
+- besseres Upload-Programm auf PC-Seite (?)
 - Timing-Constraints für Spartan3 überarbeiten
+- Button für Warmstart
 

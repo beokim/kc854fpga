@@ -78,8 +78,6 @@ architecture rtl of vidgen is
 
     constant SYNC_DELAY    : integer := 1;
 
-    constant BLINK_REM_TICKS_MAX : integer := (312 - 256) * 7 + 7;
-    
     signal countH       : integer range 0 to H_VID_END-1 := 0;
     signal countV       : integer range 0 to V_VID_END-1 := 0;
     

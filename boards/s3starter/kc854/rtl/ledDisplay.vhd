@@ -41,8 +41,8 @@ architecture rtl of ledDisplay is
      signal displayDigit : integer range 0 to 3 := 0;
      signal digit        : std_logic_vector(3 downto 0);
 begin
-     process
-     begin
+    process
+    begin
         wait until rising_edge(clk);
          
         if (displayDelay < sysclk) then

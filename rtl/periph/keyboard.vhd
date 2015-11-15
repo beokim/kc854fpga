@@ -61,23 +61,26 @@ architecture rtl of keyboard is
     signal keyClockEn : boolean;
     
     signal scancode  : std_logic_vector(7 downto 0);
-    signal keyShift  : std_logic_vector(7 downto 0) := "00000000";
-    signal key       : std_logic_vector(7 downto 0) := "10000000";
     
+    signal keyShift  : std_logic_vector(7 downto 0) := "00000000";
+    signal currentKey : std_logic_vector(7 downto 0);
+    
+    signal key       : std_logic_vector(7 downto 0);
+
     signal rcvd      : std_logic;
     
     signal rshift    : boolean := false;
     signal lshift    : boolean := false;
     signal altkey    : boolean := false;
 
-    
     signal breakcode : boolean;
     signal keydown   : boolean;
     signal keydownDelayed : boolean;
-    signal keyRepeat : boolean := false;
+    signal keyRepeat : integer range 0 to 2 := 0;
     signal keycode   : std_logic_vector(7 downto 0);
 
     signal iKey      : integer range 0 to 128 := 0;
+    
 begin
     key <= std_logic_vector(to_unsigned(iKey,8));
 --    kcKey <= std_logic_vector(to_unsigned(iKey / 10,4)) & std_logic_vector(to_unsigned(iKey mod 10,4));
@@ -304,6 +307,8 @@ begin
         end if;
     end process;
     
+    key <= std_logic_vector(to_unsigned(iKey,8));
+    
     -- keycode auf den ausgang schieben
     shiftout : process
     begin
@@ -324,9 +329,16 @@ begin
                 
                 keyShift <= '0' & keyShift(7 downto 1);
                 remo <= '1';
-            elsif ((keydownDelayed and key(7)='0') or keyRepeat) then
+            elsif (keyRepeat>0) then
+                keyRepeat <= keyRepeat - 1;
+                keyShift <= currentKey;
+            elsif (keydownDelayed and key(7)='0') then
+                if (key /= currentKey) then -- neue Taste? mind. 2x senden
+                    keyRepeat <= 1;
+                end if;
+                
                 keyShift <= '1' & key(6 downto 0);
-                keyRepeat <= keydownDelayed;
+                currentKey <= '1' & key(6 downto 0);
             end if;
         end if;
     end process;

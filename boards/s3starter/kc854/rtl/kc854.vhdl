@@ -156,14 +156,14 @@ architecture struct of kc854 is
     signal m003Sel      : std_logic;
     signal m003Test     : std_logic_vector(7 downto 0);
     signal m003TestUart : std_logic;
-	 
+     
     signal vgaRed       : std_logic_vector(3 downto 0);
     signal vgaGreen     : std_logic_vector(3 downto 0);
     signal vgaBlue      : std_logic_vector(3 downto 0);
-	 
-	 signal uart1Wr_n    : std_logic;
-	 
-	 signal ledData      : std_logic_vector(15 downto 0);
+     
+    signal uart1Wr_n    : std_logic;
+     
+    signal ledData      : std_logic_vector(15 downto 0);
     
 begin
 --    GPIO_1(1) <= debugPort(2);
@@ -174,17 +174,17 @@ begin
     VGA_R <= vgaRed(3);
     VGA_G <= vgaGreen(3);
     VGA_B <= vgaBlue(3);
-	 
-	ledData <= keybKcKey & keybPs2code;
-	 
-	LEDR(0) <= pioBStb;
-	LEDR(4 downto 1) <= ctcClkTrg;
-	LEDR(5) <= '0';
-	LEDR(6) <= not UART_RXD;
-	LEDR(7) <= debugPort(1);
---	 LEDR(7 downto 6) <= (others =>'0');
---	 ledData <= cpuAddr;
-	 
+     
+    ledData <= keybKcKey & keybPs2code;
+     
+    LEDR(0) <= pioBStb;
+    LEDR(4 downto 1) <= ctcClkTrg;
+    LEDR(5) <= '0';
+    LEDR(6) <= not UART_RXD;
+    LEDR(7) <= debugPort(1);
+--   LEDR(7 downto 6) <= (others =>'0');
+--   ledData <= cpuAddr;
+     
     led : entity work.ledDisplay
     port map (
         clk        => cpuclk,
@@ -211,29 +211,29 @@ begin
             debugPort(2) <= '1';
         end if;
         
---		  if (SW(0)='0') then
---				debugRunCpu <= cpuTick; 
---		  else
---				if (debugClock<24999999) then
---					 debugRunCpu <= '0';
---				    debugClock <= debugClock + 1;
---				else
---					 debugPort(1) <= not debugPort(1);
---				    debugClock <= 0;
---				    debugRunCpu <= KEY(1);
---				end if;
---		  end if;
-			
+--        if (SW(0)='0') then
+--              debugRunCpu <= cpuTick; 
+--        else
+--              if (debugClock<24999999) then
+--                   debugRunCpu <= '0';
+--                  debugClock <= debugClock + 1;
+--              else
+--                   debugPort(1) <= not debugPort(1);
+--                  debugClock <= 0;
+--                  debugRunCpu <= KEY(1);
+--              end if;
+--        end if;
+            
         if (cpuTick='1') then
-				if (debugClock<1773447) then
-					 debugRunCpu <= '0';
-				    debugClock <= debugClock + 1;
-				else
-					 debugPort(1) <= not debugPort(1);
-				    debugClock <= 0;
-				end if;
-		  end if;
-		  
+                if (debugClock<1773447) then
+                     debugRunCpu <= '0';
+                    debugClock <= debugClock + 1;
+                else
+                     debugPort(1) <= not debugPort(1);
+                    debugClock <= 0;
+                end if;
+          end if;
+          
  --       debugRunCpu <= '1';
 --        if (debugClock<20000000) then
 --            debugClock <= debugClock + 1;
@@ -284,9 +284,9 @@ begin
     );
     
     video : entity work.video
-	 generic map (
-        DITHER_MODE => 1	
-	 )
+    generic map (
+        DITHER_MODE => 1    
+    )
     port map (
         cpuclk    => cpuclk, 
         vidclk    => vgaclk,
@@ -481,8 +481,8 @@ begin
     
     m003TestUart <= '1' when (not m003Sel='1') or (intAckPeriph(15 downto 6) /= "0000000000") else '0';
     
-	 uart1Wr_n <= cpuRD_n and cpuWR_n;
-	 
+     uart1Wr_n <= cpuRD_n and cpuWR_n;
+     
     uart1 : entity work.uart
     generic map (
         BAUDRATE => 2_000_000

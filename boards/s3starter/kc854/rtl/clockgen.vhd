@@ -22,16 +22,18 @@
 --
 -- Wrapper fuer PLL
 --
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+library ieee;
+use ieee.std_logic_1164.all;
 
 entity clockgen is
-    Port ( extclk : in  STD_LOGIC;
+    port ( 
+        extclk : in  std_logic;
     
-           cpuclk : out  STD_LOGIC;
-           vgaclk : out  STD_LOGIC;
+        cpuclk : out  std_logic;
+        vgaclk : out  std_logic;
            
-           locked : out  STD_LOGIC);
+        locked : out  std_logic
+    );
 end clockgen;
 
 architecture rtl of clockgen is

@@ -56,9 +56,9 @@ architecture rtl of sysclock is
 begin
     cpuClkEn <= mainClkEn;
     -- Divider: Reset@ 111 0000 => 112
-	-- 32 (L) 32 (H) 32 (L) 16 (H) = 112
+    -- 32 (L) 32 (H) 32 (L) 16 (H) = 112
     h5ClkCounterSLV <= std_logic_vector(to_unsigned(h5ClkCounter,h5ClkCounterSLV'length));
-	h4Clk <= h5ClkCounterSLV(5);
+    h4Clk <= h5ClkCounterSLV(5);
     -- Divider: Reset@ 1 0011 1000 => 312
     -- 256 (L) 56 (H) 
     biClk <= '0' when biClkCounter<256 else '1'; 
@@ -84,7 +84,7 @@ begin
             end if;
                 
             mainClkEn <= '1';
-		  end if;
+        end if;
     end process;
     
     -- Takte fuer CTC (normalerweise aus Videotakt abegeleitet)
