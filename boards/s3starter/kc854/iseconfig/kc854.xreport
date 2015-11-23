@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-11-14T22:25:21</DateModified>
+  <DateModified>2015-11-23T19:59:55</DateModified>
   <ModuleName>kc854</ModuleName>
-  <SummaryTimeStamp>2015-11-14T19:46:16</SummaryTimeStamp>
-  <SavedFilePath>E:/source/altera/kc854fpga_test/boards/s3starter/kc854/iseconfig/kc854.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>E:/source/altera/kc854fpga_test/boards/s3starter/kc854\</ImplementationReportsDirectory>
+  <SummaryTimeStamp>2015-11-16T21:18:41</SummaryTimeStamp>
+  <SavedFilePath>E:/source/altera/kc854fpga/boards/s3starter/kc854/iseconfig/kc854.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>E:/source/altera/kc854fpga/boards/s3starter/kc854\</ImplementationReportsDirectory>
   <DateInitialized>2015-11-14T18:35:48</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

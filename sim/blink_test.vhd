@@ -212,6 +212,8 @@ begin
         
         vidBlink => vidBlinkRam,
         
+        vidBlank => '0',
+        
         vidLine  => vidLine(7 downto 0),
         
         vidScanline => SW(1),

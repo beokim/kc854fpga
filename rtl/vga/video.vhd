@@ -52,6 +52,8 @@ entity video is
         vidBlink  : in  std_logic;
         vidBlinkEn : in  std_logic;
         
+        vidBlank  : in  std_logic;
+
         vidScanline : in  std_logic;
         
         test       : out std_logic_vector(3 downto 0)
@@ -218,6 +220,8 @@ begin
         vidHires => vidHires,
         
         vidBlink => vgaBlink,
+        
+        vidBlank => vidBlank,
         
         vidScanline => vidScanline,
         

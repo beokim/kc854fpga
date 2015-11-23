@@ -303,10 +303,14 @@ begin
         vidData   => vidData,
         vidRead   => vidRead,
         vidBusy   => vidBusy,
-        
-        vidHires  => vidHires,
+ 
         vidBlink  => ctcZcTo(2),
         vidBlinkEn => vidBlinkEn,
+ 
+        vidBlank  => not cpuReset_n,
+        
+        vidHires  => vidHires,
+        
  
         vidScanline => SW(1)
     );

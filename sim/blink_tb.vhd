@@ -20,7 +20,7 @@
 -- POSSIBILITY OF SUCH DAMAGE.
 --
 --
--- TB fuer kompletten KC - entsprechend langsam
+-- TB fuer Display Blinktest
 --
 library ieee;
 use ieee.std_logic_1164.all;

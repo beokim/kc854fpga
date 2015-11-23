@@ -286,9 +286,11 @@ begin
         vidBusy   => vidBusy,
         
         vidHires  => vidHires,
-        vidBlinkEn => vidBlinkEn,
         
         vidBlink  => ctcZcTo(2),
+        vidBlinkEn => vidBlinkEn,
+        
+        vidBlank  => not cpuReset_n,
         
         vidScanline => SW(1),
         

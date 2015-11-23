@@ -51,6 +51,8 @@ entity vidgen is
         vidHires    : in  std_logic;
         
         vidBlink    : in  std_logic;
+        
+        vidBlank    : in  std_logic;
          
         vidScanline : in  std_logic;
         
@@ -217,7 +219,7 @@ begin
         wait until rising_edge(vidclk);
 
         dispColor := "000000";    -- schwarz
-        if ((countV < V_DISP) and (countH < H_DISP) and not (vidScanline='0' and pixelY=0)) then
+        if ((countV < V_DISP) and (countH < H_DISP) and not (vidScanline='0' and pixelY=0) and not (vidBlank='1')) then
             if (vidHires='1') then     -- Bitmodus/Hires: color+pixel= "00" schwarz
                 dispColor(5 downto 4) := (others => pixelShift(7)); -- "01" rot
                 dispColor(3 downto 2) := (others => colorShift(7)); -- "10" tuerkis
