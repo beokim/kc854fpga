@@ -29,7 +29,7 @@ use IEEE.numeric_std.all;
 
 entity keyboard is
     generic (
-        SYS_CLK : integer := 50_000_0
+        SYSCLK : integer := 50_000_0
     );
     port (
         clk     : in std_logic;
@@ -49,7 +49,7 @@ entity keyboard is
 end keyboard;
 
 architecture rtl of keyboard is
-    constant MAX_DIV : integer := SYS_CLK / (62_5) * 64 - 1;
+    constant MAX_DIV : integer := SYSCLK / (62_5) * 64 - 1;
     
     signal clockDiv  : integer range 0 to MAX_DIV := 0;
     --  5: 0 Bit
@@ -91,7 +91,7 @@ begin
     
     ps2if : entity work.ps2if
     generic map (
-        SYS_CLK => SYS_CLK * 100
+        SYSCLK => SYSCLK * 100
     )
     port map (
         clk     => clk,

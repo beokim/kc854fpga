@@ -28,7 +28,7 @@ use IEEE.std_logic_1164.all;
 
 entity ps2if is
     generic (
-        SYS_CLK : integer := 50_000_000 -- 50MHz
+        SYSCLK : integer := 50_000_000 -- 50MHz
     );
     port (
         clk     : in std_logic;
@@ -42,7 +42,7 @@ entity ps2if is
 end;
 
 architecture rtl of ps2if is
-    constant maxTimeout : integer := SYS_CLK/10000; -- max. 10kHz
+    constant maxTimeout : integer := SYSCLK/10000; -- max. 10kHz
 
     type ps2state is (stateWaitLow, stateLow, stateWaitHigh, stateHigh);
     signal state : ps2state := stateWaitLow;

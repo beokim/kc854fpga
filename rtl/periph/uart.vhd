@@ -28,8 +28,8 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity uart is
     generic (
-        sysclk   : integer := 50_000_000; -- 50MHz
-        baudrate : integer := 115_200 
+        SYSCLK   : integer := 50_000_000; -- 50MHz
+        BAUDRATE : integer := 115_200 
     );
     port (
         clk   : in std_logic;
