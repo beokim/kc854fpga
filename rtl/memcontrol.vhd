@@ -101,13 +101,13 @@ begin
     cpuEn    <= '1' when state=vidReadMem and cpuCycle else '0';
     cpuWait  <= '1';
     
-    vidRead <= '1' when state = vidReadMem else '0';
+ --   vidRead <= '1' when state = vidReadMem else '0';
     vidBusy <= '1' when selectVid else '0';
     vidBlinkEn <= pioPortB(7);
     
 --    waitState <= lastWr='1' and cpuWR_n='0' and cpuMREQ_n='0';
 
-    sramAddr <= vidAddrInt when selectVid else cpuAddrInt;
+--    sramAddr <= vidAddrInt when selectVid else cpuAddrInt;
     
     -- upper/lower byte fuer CPU-Writes
     sramDataOut(7 downto 0)  <= cpuDIn when bankLByte='1' else x"00";
@@ -311,15 +311,20 @@ begin
                 when cpuCycle2 | cpuIdle2 => 
                     state <= vidSetAddr;
                     selectVid <= true;
-                when vidSetAddr => state <= vidReadMem; -- Video-Adresse
+                    sramAddr <= vidAddrInt;
+                when vidSetAddr => 
+                    state <= vidReadMem; -- Video-Adresse
+                    vidRead <= '1';
                 when vidReadMem => -- Video-Speicher lesen
                     cpuCycle <= false;
                     if cpuCycle then -- soll CPU laufen?
                         state <= cpuCycle0;
+                        sramAddr <= cpuAddrInt;
                     else
                         state <= cpuIdle0;
                     end if;
                     selectVid <= false;
+                    vidRead <= '0';
             end case;
         end if;
     end process;
