@@ -21,7 +21,7 @@
 --
 --
 -- simple interrupt controller
---  - no retriggering of ints after int acknowledge
+--  - no retriggering of ints after int acknowledge until reti
 --
 
 library IEEE;
@@ -33,14 +33,19 @@ entity intController is
         NUMINTS : integer := 8
     );
     port (
-        clk     : in std_logic;
-        res_n   : in std_logic;
-        int     : out std_logic;
+        clk       : in std_logic;
+        res_n     : in std_logic;
+        
+        int_n     : out std_logic;
         intPeriph : in std_logic_vector(NUMINTS-1 downto 0);
-        intAck  : out std_logic_vector(NUMINTS-1 downto 0);
-        m1      : in std_logic;
-        iorq    : in std_logic;
-        RETI_n  : in std_logic
+        intAck    : out std_logic_vector(NUMINTS-1 downto 0);
+        
+        m1_n      : in std_logic;
+        iorq_n    : in std_logic;
+        rd_n      : in std_logic;
+        reti_n    : in std_logic;
+        
+        intEna_n  : in std_logic
     );
 end intController;
 
@@ -54,7 +59,7 @@ architecture rtl of intController is
     type controllerStates is (idle, intAccepted, waitForRetiEnd, waitForM1, finishInt);
     signal state         : controllerStates := idle;
 begin
-    intAck <= currentInt when m1='0' and iorq='0' else (others => '0');
+    intAck <= currentInt when m1_n='0' and iorq_n='0' else (others => '0');
   
     int_mask : process(intInternal)
     begin
@@ -75,34 +80,34 @@ begin
     
         if (res_n='0') then
             state <= idle;
-            int <= '1';
+            int_n <= '1';
             currentInt <= (others => '0');
             intInternal <= (others => '0');
         else
             intResetMask := (others => '1');
             
-            if (m1='1') then
+            if (m1_n='1') then
                 if intMask /= zeroVect and state=idle then -- new int + update to higher prio until int ack
-                    int <= '0';
+                    int_n <= '0';
                     currentInt <= intMask;
                 end if;
                 
-                if RETI_n='0' and state=intAccepted then
+                if reti_n='0' and state=intAccepted then
                     state <= waitForRetiEnd;
-                elsif RETI_n='1' and state=waitForRetiEnd then
+                elsif reti_n='1' and state=waitForRetiEnd then
                     state <= waitForM1;
                 elsif state=finishInt then
                     currentInt <= (others => '0'); -- restart int cycle
                     state <= idle;
                 end if;
             else
-                if state=waitForM1 then -- allow int after 1 additional m1-cycle
+                if state=waitForM1 then -- allow ints again after 1 additional m1-cycle
                     state <= finishInt;
                 end if;
                 
-                if iorq='0' then -- int ack
+                if iorq_n='0' then -- int ack
                     state <= intAccepted;
-                    int <= '1';
+                    int_n <= '1';
                     intResetMask := not currentInt; -- reset current int
                 end if;
             end if;

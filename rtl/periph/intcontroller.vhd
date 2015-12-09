@@ -21,7 +21,7 @@
 --
 --
 -- more complete interrupt controller
---   - does not work atm
+-- currently under test
 --
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -32,56 +32,66 @@ entity intController is
         NUMINTS : integer := 8
     );
     port (
-        clk     : in std_logic;
-        res     : in std_logic;
-        int     : out std_logic;
+        clk       : in std_logic;
+        res_n     : in std_logic;
+        
+        int_n     : out std_logic;
         intPeriph : in std_logic_vector(NUMINTS-1 downto 0);
-        intAck  : out std_logic_vector(NUMINTS-1 downto 0);
-        cpuDIn  : in std_logic_vector(7 downto 0);
-        m1      : in std_logic;
-        iorq    : in std_logic;
-        rd      : in std_logic;
-        test    : out std_logic_vector(NUMINTS-1 downto 0);
-        RETI_n  : in std_logic
+        intAck    : out std_logic_vector(NUMINTS-1 downto 0);
+        
+        m1_n      : in std_logic;
+        iorq_n    : in std_logic;
+        rd_n      : in std_logic;
+        reti_n    : in std_logic;
+        
+        intEna_n  : in std_logic
     );
 end intController;
 
 architecture rtl of intController is
     constant zeroVect   : std_logic_vector(NUMINTS-1 downto 0) := (others => '0');
     
-    signal intInternal  : std_logic_vector(NUMINTS-1 downto 0);
+    signal int          : std_logic_vector(NUMINTS-1 downto 0);
     signal intMask      : std_logic_vector(NUMINTS-1 downto 0);
+    
+    signal intAckFF     : std_logic_vector(NUMINTS-1 downto 0);
+    signal intAckMask   : std_logic_vector(NUMINTS-1 downto 0);
+    
     signal currentInt   : std_logic_vector(NUMINTS-1 downto 0);
-    signal currentAck   : std_logic_vector(NUMINTS-1 downto 0);
+--    signal currentIntAck : std_logic_vector(NUMINTS-1 downto 0);
     
-    signal intReti      : std_logic_vector(NUMINTS-1 downto 0);
-    signal intRetiMask  : std_logic_vector(NUMINTS-1 downto 0);
+--    type controllerStates is (idle, intAccepted, waitForRetiEnd, waitForM1, finishInt);
+--    signal state         : controllerStates := idle;
     
-    signal reti         : integer range 0 to 2 := 0;
+    signal resetInt     : boolean := false;
+    signal retiEdgeDet  : std_logic_vector(1 downto 0) := "11";
+    
 begin
-    intAck <= currentAck when m1='0' and iorq='0' else (others => '0');
+    intAck <= currentInt when m1_n='0' and iorq_n='0' else (others => '0');
   
-    test <= intReti;
-  
-    int_mask : process(intInternal,intReti)
+    int_mask : process(int,intAckFF)
     begin
         intMask <= (others => '0');
         for i in 0 to NUMINTS-1 -- 0 is highest prio
         loop
-            if intInternal(i)='1' and intReti(i)='0' then
+            if intAckFF(i)='1' then
+                exit;
+            end if;
+            
+            if int(i)='1' then
                 intMask(i) <= '1';
                 exit;
             end if;
         end loop;
     end process;
     
-    ack_mask : process(intReti)
+    ack_mask : process(intAckFF)
     begin
-        intRetiMask <= (others => '0');
+        intAckMask <= (others => '0');
         for i in 0 to NUMINTS-1 -- 0 is highest prio
         loop
-            if intReti(i)='1' then
-                intRetiMask(i) <= '1';
+            if intAckFF(i)='1' then
+                intAckMask(i) <= '1';
                 exit;
             end if;
         end loop;
@@ -92,51 +102,47 @@ begin
     begin
         wait until rising_edge(clk);
     
-        if (res='0') then
-            reti <= 0;
-            int <= '1';
-            currentInt <= (others => '0');
-            intInternal <= (others => '0');
-            intReti <= (others => '0');
+        if (res_n='0') then
+--            state <= idle;
+            int_n <= '1';
+            
+            int <= zeroVect;
+            intAckFF <= zeroVect;
+            currentInt <= zeroVect;
+--            currentIntAck <= zeroVect;
+            
+            resetInt <= false;
+            
+            retiEdgeDet <= "11";
+            
         else
             intResetMask := (others => '1');
             
-            if (m1='1') then
-                currentAck <= (others => '0');
-                if intMask/=zeroVect then -- new int (with higher prio?)
-                    int <= '0';
-                    currentInt <= intMask;
-                    currentAck <= intMask;
+            if (m1_n='1') then
+                retiEdgeDet <= retiEdgeDet(0) & reti_n;
+                
+                if (resetInt) then
+                    int_n <= '1';
+                    currentInt <= zeroVect;
                 end if;
                 
-                if RETI_n='0' and reti=0 then
-                    reti <= 1;
-                elsif RETI_n='1' and reti=1 then
-                    reti <= 2;
-                elsif reti=2 then
-                    intReti <= intReti and not intRetiMask; -- reset highest reti-flag -> new int can be triggered
-                    reti <= 0;
+                if intMask /= zeroVect then -- new int + update to higher prio until int ack
+                    int_n <= '0';
+                    currentInt <= intMask;
+                end if;
+                
+                if (retiEdgeDet="01") then
+                    intAckFF <= intAckFF and not intAckMask;
                 end if;
             else
-                if iorq='0' then -- int ack
-                    int <= '1';
-                    intReti <= intReti or currentInt; -- update "wait for reti"-flags -> no more int for this until reti
+                if iorq_n='0' then -- int ack
+                    intAckFF <= intAckFF or currentInt;
+                    resetInt <= true;
                     intResetMask := not currentInt; -- reset current int
-                    currentInt <= (others => '0');
-                elsif rd='0' then -- reti?
-
-                    
---                    if cpuDIn=x"ED" and reti=0 then -- reti 1
---                        reti <= 1;
---                    elsif cpuDIn=x"4D" and reti=1 then -- reti 2
---                        reti <= 2;
---                    elsif reti /= 2 then
---                        reti <= 0; -- something else -> reset statemachine
---                    end if;
                 end if;
             end if;
             
-            intInternal <= (intInternal and intResetMask) or intPeriph;
+            int <= (int and intResetMask) or intPeriph;
         end if;
         
     end process;

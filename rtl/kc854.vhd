@@ -97,8 +97,8 @@ architecture struct of kc854 is
     signal cpuIorq_n    : std_logic;
     signal cpuRD_n      : std_logic;
     signal cpuWR_n      : std_logic;
-    signal cpuRETI      : std_logic;
-    signal cpuIntE      : std_logic;
+    signal cpuRETI_n    : std_logic;
+    signal cpuIntEna_n  : std_logic;
 
     signal memDataOut   : std_logic_vector(7 downto 0);
     
@@ -163,10 +163,18 @@ architecture struct of kc854 is
     signal memSwitches  : std_logic_vector(9 downto 0);
     
 begin
-    GPIO_1(1) <= pioBStb;
-    GPIO_1(3) <= uartTXD1;
-    GPIO_1(5) <= uartTXD2;
-    GPIO_1(7) <= uartTXD3;
+--    GPIO_1(1) <= pioBStb;
+    GPIO_1(1) <= cpuIntEna_n;
+--    GPIO_1(3) <= uartTXD1;
+    GPIO_1(3) <= cpuRETI_n;
+    
+--    GPIO_1(1) <= intPeriph(0);
+--    GPIO_1(3) <= intPeriph(1);
+    GPIO_1(5) <= intPeriph(2);
+    GPIO_1(7) <= intPeriph(3);
+    
+--    GPIO_1(5) <= uartTXD2;
+--    GPIO_1(7) <= uartTXD3;
 
     dec1 : entity work.seg7dec
     port map (
@@ -377,8 +385,8 @@ begin
 --            DI      => "00000000",
         DI      => cpuDataIn,
         DO      => cpuDataOut,
-        IntE    => cpuIntE,
-        RETI_n  => cpuRETI
+        IntE    => cpuIntEna_n,
+        RETI_n  => cpuRETI_n
     );
         
     ioSel   <= cpuIorq_n = '0' and cpuM1_n='1';
@@ -495,7 +503,7 @@ begin
         rd_n    => '1',
         wr_n    => cpuRD_n,
         addr    => "0",
-        dIn     => m003DataOut,
+        dIn     => cpuDataIn,
         dOut    => open,
         txd     => uartTXD2,
         rxd     => '1'
@@ -523,14 +531,16 @@ begin
         NUMINTS => NUMINTS
     )
     port map (
-        clk     => cpuclk,
-        res_n   => cpuReset_n,
-        int     => cpuInt_n,
+        clk       => cpuclk,
+        res_n     => cpuReset_n,
+        int_n     => cpuInt_n,
         intPeriph => intPeriph,
-        intAck  =>  intAckPeriph,
-        m1      => cpuM1_n,
-        iorq    => cpuIorq_n,
-        RETI_n  => cpuRETI
+        intAck    => intAckPeriph,
+        m1_n      => cpuM1_n,
+        iorq_n    => cpuIorq_n,
+        rd_n      => cpuRD_n,
+        reti_n    => cpuRETI_n,
+        intEna_n  => cpuIntEna_n
     );
     
     m003 : entity work.m003
