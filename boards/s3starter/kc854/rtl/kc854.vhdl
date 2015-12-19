@@ -543,12 +543,14 @@ begin
     port map (
         clk     => cpuclk,
         res_n   => cpuReset_n,
-        int     => cpuInt_n,
+        int_n   => cpuInt_n,
         intPeriph => intPeriph,
         intAck  =>  intAckPeriph,
-        m1      => cpuM1_n,
-        iorq    => cpuIorq_n,
-        RETI_n  => cpuRETI
+        m1_n    => cpuM1_n,
+        iorq_n  => cpuIorq_n,
+        rd_n    => cpuRD_n,
+        reti_n  => cpuRETI,
+        intEna_n => cpuIntE
     );
     
     m003 : entity work.m003

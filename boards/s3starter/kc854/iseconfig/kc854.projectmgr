@@ -17,6 +17,7 @@
          <ClosedNode>/kc854 - struct E:|source|altera|kc854fpga|boards|s3starter|kc854|rtl|kc854.vhdl/m003 - m003 - rtl</ClosedNode>
          <ClosedNode>/kc854 - struct E:|source|altera|kc854fpga|boards|s3starter|kc854|rtl|kc854.vhdl/memcontrol - memcontrol - rtl</ClosedNode>
          <ClosedNode>/kc854 - struct E:|source|altera|kc854fpga|boards|s3starter|kc854|rtl|kc854.vhdl/pio - pio - rtl</ClosedNode>
+         <ClosedNode>/kc854 - struct E:|source|altera|kc854fpga|boards|s3starter|kc854|rtl|kc854.vhdl/video - video - rtl</ClosedNode>
          <ClosedNode>/ledDisplay - rtl E:|source|altera|kc854fpga|boards|s3starter|kc854|rtl|ledDisplay.vhd</ClosedNode>
          <ClosedNode>/sysclock - Behavioral E:|source|altera|kc854fpga|boards|s3starter|kc854|rtl|sysclock.vhd</ClosedNode>
       </ClosedNodes>
@@ -25,7 +26,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000184000000020000000000000000000000000200000064ffffffff000000810000000300000002000001840000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000161000000020000000000000000000000000200000064ffffffff000000810000000300000002000001610000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
       <CurrentItem>kc854 - struct (E:/source/altera/kc854fpga/boards/s3starter/kc854/rtl/kc854.vhdl)</CurrentItem>
    </ItemView>
@@ -77,13 +78,13 @@
          <ClosedNode>Implement Design/Translate</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Generate Programming File</SelectedItem>
+         <SelectedItem>Generate Target PROM/ACE File</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000151000000010000000100000000000000000000000064ffffffff000000810000000000000001000001510000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>Generate Programming File</CurrentItem>
+      <CurrentItem>Generate Target PROM/ACE File</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_UCF" guiview="Process" >
       <ClosedNodes>
